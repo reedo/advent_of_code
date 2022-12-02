@@ -1,7 +1,12 @@
 use std::fs::read_to_string;
 
-pub fn get_parsed_input() -> Result<Vec<Vec<u32>>, std::io::Error> {
-    let file = read_to_string("./input.txt")?;
+fn main() {
+    let input = read_to_string("./day_01/input.txt").unwrap();
+    println!("{}", part_1(&input));
+    println!("{}", part_2(&input));
+}
+
+pub fn parse_input(file: &str) -> Result<Vec<Vec<u32>>, std::io::Error> {
     let lines = file.lines();
 
     let mut elves: Vec<_> = Vec::new();
@@ -25,16 +30,16 @@ pub fn get_parsed_input() -> Result<Vec<Vec<u32>>, std::io::Error> {
     Ok(elves)
 }
 
-pub fn part_1() -> u32 {
-    let elves = get_parsed_input().expect("Failed to get parsed input");
+pub fn part_1(input: &str) -> u32 {
+    let elves = parse_input(input).expect("Failed to get parsed input");
 
     let sums: Vec<u32> = elves.iter().map(|elf| elf.iter().sum::<u32>()).collect();
 
     *sums.iter().max().unwrap_or(&0)
 }
 
-pub fn part_2() -> u32 {
-    let elves = get_parsed_input().expect("Failed to get parsed input");
+pub fn part_2(input: &str) -> u32 {
+    let elves = parse_input(input).expect("Failed to get parsed input");
 
     let mut sums: Vec<u32> = elves.iter().map(|elf| elf.iter().sum::<u32>()).collect();
     sums.sort();
@@ -50,13 +55,28 @@ pub fn part_2() -> u32 {
 mod tests {
     use super::*;
 
+    const INPUT: &str = r"1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000";
+
     #[test]
     fn part_1_works() {
-        assert_eq!(part_1(), 69501)
+        assert_eq!(part_1(INPUT), 24_000)
     }
 
     #[test]
     fn part_2_works() {
-        assert_eq!(part_2(), 202346)
+        assert_eq!(part_2(INPUT), 45_000)
     }
 }
