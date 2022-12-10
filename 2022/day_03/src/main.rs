@@ -23,13 +23,6 @@ fn part_2(input: &str) -> u32 {
         .sum()
 }
 
-fn parse_input(input: &str) -> Vec<(&str, &str)> {
-    input
-        .lines()
-        .map(|line| line.split_at(line.len() / 2))
-        .collect::<Vec<(&str, &str)>>()
-}
-
 fn get_shared_char_in_each_half(line: &str) -> char {
     let pair = line.split_at(line.len() / 2);
     for c in pair.0.chars() {
