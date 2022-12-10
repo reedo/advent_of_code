@@ -36,4 +36,8 @@ impl CleaningRange {
     pub fn fully_contains(&self, other: &CleaningRange) -> bool {
         (other.start..=other.end).all(|x| (self.start..=self.end).contains(&x))
     }
+
+    pub fn overlaps(&self, other: &CleaningRange) -> bool {
+        (other.start..=other.end).any(|x| (self.start..=self.end).contains(&x))
+    }
 }

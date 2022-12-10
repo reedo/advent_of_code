@@ -17,8 +17,11 @@ fn part_1(input: &str) -> usize {
         .count()
 }
 
-fn part_2(input: &str) -> u32 {
-    0
+fn part_2(input: &str) -> usize {
+    parse_input(input)
+        .iter()
+        .filter(|pair| pair.0.overlaps(&pair.1))
+        .count()
 }
 
 fn parse_input(input: &str) -> Vec<(CleaningRange, CleaningRange)> {
@@ -49,6 +52,6 @@ mod tests {
 
     #[test]
     fn example_2() {
-        assert_eq!(part_2(INPUT), 0);
+        assert_eq!(part_2(INPUT), 4);
     }
 }
