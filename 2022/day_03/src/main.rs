@@ -18,8 +18,8 @@ fn part_1(input: &str) -> u32 {
 fn part_2(input: &str) -> u32 {
     input
         .lines()
-        .array_chunks()
-        .map(|[a, b, c]| priority_of(&get_shared_char_in_group([a, b, c])))
+        .array_chunks::<3>()
+        .map(|group| priority_of(&get_shared_char_in_group(group)))
         .sum()
 }
 
