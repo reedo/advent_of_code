@@ -3,7 +3,7 @@
 use std::fs::read_to_string;
 
 fn main() {
-    let input = read_to_string("./input.txt").unwrap();
+    let input = read_to_string("./day_03/input.txt").unwrap();
     println!("{}", part_1(&input));
     println!("{}", part_2(&input));
 }
