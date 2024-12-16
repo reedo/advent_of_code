@@ -28,6 +28,30 @@
       <sourceFolder url="file://$MODULE_DIR$/2022/day_24/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/2022/day_25/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/2024/day_01/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_02/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_03/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_04/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_05/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_06/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_07/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_08/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_09/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_10/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_11/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_12/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_13/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_14/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_15/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_16/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_17/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_18/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_19/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_20/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_21/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_22/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_23/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_24/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2024/day_25/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/2022/day_01/target" />
       <excludeFolder url="file://$MODULE_DIR$/2022/day_02/target" />
       <excludeFolder url="file://$MODULE_DIR$/2022/day_03/target" />
@@ -54,6 +78,7 @@
       <excludeFolder url="file://$MODULE_DIR$/2022/day_24/target" />
       <excludeFolder url="file://$MODULE_DIR$/2022/day_25/target" />
       <excludeFolder url="file://$MODULE_DIR$/2024/day_01/target" />
+      <excludeFolder url="file://$MODULE_DIR$/2024/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
