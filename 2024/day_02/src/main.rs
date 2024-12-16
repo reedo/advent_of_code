@@ -8,7 +8,7 @@ fn main() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-pub fn parse_input(file: &str) -> Result<Vec<Vec<usize>>, std::io::Error> {
+pub fn parse_input(file: &str) -> Vec<Vec<usize>> {
     let lines = file.lines();
     let mut lists = vec![];
 
@@ -26,7 +26,7 @@ pub fn parse_input(file: &str) -> Result<Vec<Vec<usize>>, std::io::Error> {
         lists.push(list);
     }
 
-    Ok(lists)
+    lists
 }
 
 fn all_numbers_are_close(list: &[usize]) -> bool {
@@ -52,7 +52,7 @@ fn list_is_safe(list: &[usize]) -> bool {
 }
 
 pub fn part_1(input: &str) -> Result<usize, anyhow::Error> {
-    let lists = parse_input(input)?;
+    let lists = parse_input(input);
     let number_of_safe_lists = lists.iter().fold(
         0,
         |acc, curr| if list_is_safe(curr) { acc + 1 } else { acc },
@@ -62,7 +62,7 @@ pub fn part_1(input: &str) -> Result<usize, anyhow::Error> {
 }
 
 pub fn part_2(input: &str) -> Result<usize, anyhow::Error> {
-    let lists = parse_input(input)?;
+    let lists = parse_input(input);
     let mut number_of_safe_lists = 0;
 
     for list in lists.iter() {
