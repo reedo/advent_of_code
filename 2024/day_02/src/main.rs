@@ -44,7 +44,8 @@ fn all_numbers_are_close(list: &[usize]) -> bool {
     true
 }
 
-fn list_is_safe(list: &[usize]) -> bool {
+#[allow(clippy::ptr_arg)]
+fn list_is_safe(list: &Vec<usize>) -> bool {
     let is_ascending = list.is_sorted_by(PartialOrd::gt);
     let is_descending = list.is_sorted_by(PartialOrd::lt);
 
@@ -71,7 +72,7 @@ pub fn part_2(input: &str) -> Result<usize, anyhow::Error> {
             continue;
         }
 
-        let reduced_list = (0..list.len())
+        let reduced_lists = (0..list.len())
             .map(|i| {
                 let mut reduced_list = list.clone();
                 reduced_list.remove(i);
@@ -80,7 +81,7 @@ pub fn part_2(input: &str) -> Result<usize, anyhow::Error> {
             })
             .collect::<Vec<Vec<usize>>>();
 
-        if reduced_list.iter().any(|list| list_is_safe(list)) {
+        if reduced_lists.iter().any(list_is_safe) {
             number_of_safe_lists += 1;
         }
     }
