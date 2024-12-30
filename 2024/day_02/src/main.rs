@@ -29,34 +29,11 @@ pub fn parse_input(file: &str) -> Vec<Vec<usize>> {
     lists
 }
 
-fn all_numbers_are_close(list: &[usize]) -> bool {
-    let mut prev = list[0];
-    for curr in list[1..].iter() {
-        let diff = curr.abs_diff(prev);
-        if (1..=3).contains(&diff) {
-            prev = *curr;
-            continue;
-        } else {
-            return false;
-        }
-    }
-
-    true
-}
-
-#[allow(clippy::ptr_arg)]
-fn list_is_safe(list: &Vec<usize>) -> bool {
-    let is_ascending = list.is_sorted_by(PartialOrd::gt);
-    let is_descending = list.is_sorted_by(PartialOrd::lt);
-
-    (is_ascending || is_descending) && all_numbers_are_close(list)
-}
-
 pub fn part_1(input: &str) -> Result<usize, anyhow::Error> {
     let lists = parse_input(input);
     let number_of_safe_lists = lists.iter().fold(
         0,
-        |acc, curr| if list_is_safe(curr) { acc + 1 } else { acc },
+        |acc, curr| if day_02::list_is_safe(curr) { acc + 1 } else { acc },
     );
 
     Ok(number_of_safe_lists)
@@ -67,7 +44,7 @@ pub fn part_2(input: &str) -> Result<usize, anyhow::Error> {
     let mut number_of_safe_lists = 0;
 
     for list in lists.iter() {
-        if list_is_safe(list) {
+        if day_02::list_is_safe(list) {
             number_of_safe_lists += 1;
             continue;
         }
@@ -81,7 +58,7 @@ pub fn part_2(input: &str) -> Result<usize, anyhow::Error> {
             })
             .collect::<Vec<Vec<usize>>>();
 
-        if reduced_lists.iter().any(list_is_safe) {
+        if reduced_lists.iter().any(day_02::list_is_safe) {
             number_of_safe_lists += 1;
         }
     }
